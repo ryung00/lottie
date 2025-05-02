@@ -7,16 +7,18 @@
   <style>
     body {
       margin: 0;
-      background: #000; /* 선택 사항: 배경 검정으로 */
+      /* background: #000; */
     }
-  
+
     #lottie-container {
-      width: 100vw;        /* 화면 가로 전체 */
-      height: 298px;       /* 원하는 고정 높이 */
+      width: 100%;       /* 또는 원하는 고정 너비 (예: 1920px) */
+      height: 298px;      /* 또는 원하는 고정 높이 */
+      max-width: 100%;   /* 필요에 따라 제한 */
+      max-height: 800px;  /* iframe 높이에 맞춰 제한 */
       overflow: hidden;
       margin: 0 auto;
     }
-  
+
     canvas, svg {
       width: 100%;
       height: 100%;
@@ -27,7 +29,7 @@
 <body>
 
   <h2 style="text-align: center;">Lottie 애니메이션</h2>
-  <div id="lottie-container"></div>
+   <div id="lottie-container"></div>
 
   <script>
     lottie.loadAnimation({
@@ -35,26 +37,12 @@
       renderer: 'svg',
       loop: true,
       autoplay: true,
-      path: 'test.json'
+      path: 'test.json',
+      rendererSettings: {
+        preserveAspectRatio: 'xMidYMid meet' // 또는 'xMidYMid contain', 'none'
+      }
     });
   </script>
-
-  <div id="json-container">
-  </div>
-
-  <script>
-    fetch('test.json')
-        .then(response => response.json())
-        .then(data => {
-            const jsonContainer = document.getElementById('json-container');
-            jsonContainer.textContent = JSON.stringify(data, null, 2);
-        })
-        .catch(error => {
-            console.error('JSON 파일을 불러오는 중 오류 발생:', error);
-            const jsonContainer = document.getElementById('json-container');
-            jsonContainer.textContent = 'JSON 파일을 불러오는 데 실패했습니다.';
-        });
-</script>
 
 </body>
 </html>
