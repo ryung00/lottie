@@ -5,18 +5,22 @@
   <title>Lottie Animation</title>
   <script src="https://unpkg.com/lottie-web@latest/build/player/lottie.min.js"></script>
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
+      height: 100%;
       box-sizing: border-box;
+      overflow: hidden;
+      background: transparent;
     }
   
     #lottie-container {
       width: 100%;
-      height: 298px;
+      height: 100%;
       overflow: hidden;
-      margin: 0 auto;
+      margin: 0;
       position: relative;
+      background: transparent;
     }
   
     canvas, svg {
@@ -26,6 +30,7 @@
       position: absolute;
       top: 0;
       left: 0;
+      background: transparent;
     }
   </style>
 </head>
