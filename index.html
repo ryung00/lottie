@@ -12,28 +12,17 @@
       width: 100%;
       box-sizing: border-box;
       overflow: hidden;
-      background: #000000;
+      background: #FFFFFF;
     }
-  
-    iframe {
-      display: block;
-      width: 100%;
-      height: 200px; 
-      border: none;
-      overflow: hidden;
-      margin: 0;
-      padding: 0;
-      background: transparent;
-    }
-  
+
     #lottie-container {
       width: 100%;
       height: 100%;
       overflow: hidden;
       position: relative;
-      background: #000000; 
+      background: #FFFFFF;
     }
-  
+
     canvas, svg {
       width: 100%;
       height: 100%;
@@ -41,12 +30,11 @@
       position: absolute;
       top: 0;
       left: 0;
-      background: #000000; 
+      background: #FFFFFF !important;
     }
   </style>
 </head>
 <body>
-
 
   <div id="lottie-container"></div>
 
@@ -58,7 +46,7 @@
       autoplay: true,
       path: 'plusChatArtist.json',
       rendererSettings: {
-        preserveAspectRatio: 'xMidYMid meet' 
+        preserveAspectRatio: 'none' 
       }
     });
   </script>
